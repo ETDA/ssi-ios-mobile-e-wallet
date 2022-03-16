@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansThaiUI-SemiBold.ttf">
+            <string>NotoSansThaiUI-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ObjectCell" rowHeight="113" id="emp-NO-f85" customClass="DocumentDetailWithObjectTableViewCell" customModule="ETDASSI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="emp-NO-f85" id="ZNf-JV-BS2">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายการ Attribute 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf2-at-bP8">
+                        <rect key="frame" x="20" y="20" width="134" height="23"/>
+                        <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="16"/>
+                        <color key="textColor" red="0.039215686270000001" green="0.12941176469999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eR4-Xv-nfv">
+                        <rect key="frame" x="0.0" y="53" width="414" height="60"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="2ul-4V-hcM"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="dataSource" destination="-1" id="AeW-2l-UUp"/>
+                            <outlet property="delegate" destination="-1" id="C2W-EI-LKg"/>
+                        </connections>
+                    </tableView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zf2-at-bP8" firstAttribute="top" secondItem="ZNf-JV-BS2" secondAttribute="top" constant="20" id="AEF-uV-g4C"/>
+                    <constraint firstItem="zf2-at-bP8" firstAttribute="leading" secondItem="ZNf-JV-BS2" secondAttribute="leading" constant="20" id="BCz-Pf-xZM"/>
+                    <constraint firstAttribute="trailing" secondItem="eR4-Xv-nfv" secondAttribute="trailing" id="BUG-eF-9Jr"/>
+                    <constraint firstAttribute="bottom" secondItem="eR4-Xv-nfv" secondAttribute="bottom" id="t8M-Ll-bIs"/>
+                    <constraint firstItem="eR4-Xv-nfv" firstAttribute="top" secondItem="zf2-at-bP8" secondAttribute="bottom" constant="10" id="ur6-8C-5vg"/>
+                    <constraint firstItem="eR4-Xv-nfv" firstAttribute="leading" secondItem="ZNf-JV-BS2" secondAttribute="leading" id="wuA-W5-3a7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailTableView" destination="eR4-Xv-nfv" id="9aB-us-vjY"/>
+                <outlet property="detailTableViewHeightCon" destination="2ul-4V-hcM" id="82x-IF-Cst"/>
+                <outlet property="headerLabel" destination="zf2-at-bP8" id="iVV-md-CGX"/>
+            </connections>
+            <point key="canvasLocation" x="-392.75362318840581" y="90.736607142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

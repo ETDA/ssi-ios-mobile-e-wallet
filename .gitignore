@@ -1,0 +1,8 @@
+
+ETDASSI.xcworkspace/xcuserdata/peddev.xcuserdatad/UserInterfaceState.xcuserstate
+xcuserdata
+# CocoaPods
+Pods
+Podfile.lock
+*.lock
+*.xcuserstate

@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A1z-Es-mYw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansThaiUI-Regular.ttf">
+            <string>NotoSansThaiUI-Regular</string>
+        </array>
+        <array key="NotoSansThaiUI-SemiBold.ttf">
+            <string>NotoSansThaiUI-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Set Passcode View Controller-->
+        <scene sceneID="e1J-pW-OPa">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="sbK-1O-Mgr" customClass="SetPasscodeViewController" customModule="ETDASSI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0U1-hZ-6qx"/>
+                        <viewControllerLayoutGuide type="bottom" id="eJh-Cs-VFx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ssv-Ya-E5U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ตั้งค่าความปลอดภัย" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e03-sj-8DV">
+                                <rect key="frame" x="20" y="64" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="24"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keM-A7-bc7" customClass="PasscodeView" customModule="ETDASSI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="157" width="414" height="410"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="410" id="edT-Y8-8iV"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6V-a6-CgY">
+                                <rect key="frame" x="20" y="69.5" width="8.5" height="22"/>
+                                <state key="normal" image="back_arrow_blue"/>
+                                <connections>
+                                    <action selector="touchBackButton:" destination="sbK-1O-Mgr" eventType="touchUpInside" id="I3W-pc-s90"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wle-eE-kXq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="e03-sj-8DV" secondAttribute="trailing" constant="20" id="AKq-Im-PuM"/>
+                            <constraint firstItem="t6V-a6-CgY" firstAttribute="centerY" secondItem="e03-sj-8DV" secondAttribute="centerY" id="Aps-Ap-J3f"/>
+                            <constraint firstItem="e03-sj-8DV" firstAttribute="leading" secondItem="Ssv-Ya-E5U" secondAttribute="leading" constant="20" id="CHV-mC-KEP"/>
+                            <constraint firstItem="keM-A7-bc7" firstAttribute="leading" secondItem="Ssv-Ya-E5U" secondAttribute="leading" id="Dzo-pU-RCV"/>
+                            <constraint firstAttribute="trailing" secondItem="keM-A7-bc7" secondAttribute="trailing" id="K7J-je-f3P"/>
+                            <constraint firstItem="e03-sj-8DV" firstAttribute="top" secondItem="0U1-hZ-6qx" secondAttribute="bottom" constant="20" id="XxK-P6-VSB"/>
+                            <constraint firstItem="t6V-a6-CgY" firstAttribute="leading" secondItem="wle-eE-kXq" secondAttribute="leading" constant="20" id="rCd-ap-Npg"/>
+                            <constraint firstItem="keM-A7-bc7" firstAttribute="top" secondItem="e03-sj-8DV" secondAttribute="bottom" constant="60" id="s45-Pd-QrD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hQ9-qK-z31"/>
+                    <connections>
+                        <outlet property="backButton" destination="t6V-a6-CgY" id="kv4-aq-Ujg"/>
+                        <outlet property="passcodeView" destination="keM-A7-bc7" id="zkA-cL-1Nj"/>
+                        <outlet property="titleLabel" destination="e03-sj-8DV" id="DrW-h9-D95"/>
+                        <segue destination="7xF-cW-a06" kind="show" identifier="goToComfirmPasscode" id="rhO-sD-YBt"/>
+                        <segue destination="A1z-Es-mYw" kind="show" identifier="gotoFirstSettingPasscodeScreen1" id="Bpv-Yq-goY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0t-fw-b9H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6414" y="378"/>
+        </scene>
+        <!--Comfirm Passcode View Controller-->
+        <scene sceneID="c39-Xl-uGC">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="7xF-cW-a06" customClass="ComfirmPasscodeViewController" customModule="ETDASSI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="95t-s1-ByU"/>
+                        <viewControllerLayoutGuide type="bottom" id="g6H-Ep-r2o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xk7-ui-GgS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ตั้งค่าความปลอดภัย" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBb-ae-r8U">
+                                <rect key="frame" x="20" y="64" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="24"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96l-Td-Ukv">
+                                <rect key="frame" x="20" y="69.5" width="8.5" height="22"/>
+                                <state key="normal" image="back_arrow_blue"/>
+                                <connections>
+                                    <action selector="touchBackButton:" destination="7xF-cW-a06" eventType="touchUpInside" id="L4C-aW-O33"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nC2-J4-Qng" customClass="PasscodeView" customModule="ETDASSI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="157" width="414" height="410"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="410" id="ANj-ba-gLI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3gh-SD-A57"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xBb-ae-r8U" firstAttribute="leading" secondItem="Xk7-ui-GgS" secondAttribute="leading" constant="20" id="FkN-Uc-VRv"/>
+                            <constraint firstItem="xBb-ae-r8U" firstAttribute="top" secondItem="95t-s1-ByU" secondAttribute="bottom" constant="20" id="Ul8-Wn-uNm"/>
+                            <constraint firstItem="96l-Td-Ukv" firstAttribute="centerY" secondItem="xBb-ae-r8U" secondAttribute="centerY" id="XWu-by-nOw"/>
+                            <constraint firstAttribute="trailing" secondItem="nC2-J4-Qng" secondAttribute="trailing" id="nkc-eA-DYH"/>
+                            <constraint firstItem="nC2-J4-Qng" firstAttribute="leading" secondItem="Xk7-ui-GgS" secondAttribute="leading" id="ogZ-YP-FSX"/>
+                            <constraint firstItem="96l-Td-Ukv" firstAttribute="leading" secondItem="3gh-SD-A57" secondAttribute="leading" constant="20" id="qN2-2L-P56"/>
+                            <constraint firstAttribute="trailing" secondItem="xBb-ae-r8U" secondAttribute="trailing" constant="20" id="reg-VS-Ng2"/>
+                            <constraint firstItem="nC2-J4-Qng" firstAttribute="top" secondItem="xBb-ae-r8U" secondAttribute="bottom" constant="60" id="shr-HE-m6m"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="d1U-pF-Jbe"/>
+                    <connections>
+                        <outlet property="backButton" destination="96l-Td-Ukv" id="eeT-Mv-bdt"/>
+                        <outlet property="passcodeView" destination="nC2-J4-Qng" id="bv4-xy-Oqp"/>
+                        <outlet property="titleLabel" destination="xBb-ae-r8U" id="GuU-zY-vJh"/>
+                        <segue destination="toz-Jz-AVg" kind="show" identifier="goToBioSetup" id="fPK-89-6Af"/>
+                        <segue destination="XjR-m6-s2C" kind="show" identifier="goToBioConfirm" id="0XL-dx-vjG"/>
+                        <segue destination="A1z-Es-mYw" kind="show" identifier="gotoFirstSettingPasscodeScreen" id="dss-0l-F0P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L7s-u5-bxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7239" y="-52"/>
+        </scene>
+        <!--Bio Set Up View Controller-->
+        <scene sceneID="Ouh-1u-URu">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="toz-Jz-AVg" customClass="BioSetUpViewController" customModule="ETDASSI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fYR-wI-Dj0"/>
+                        <viewControllerLayoutGuide type="bottom" id="5PG-tf-jZx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S6a-eX-NaK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biometric_replace passcode" translatesAutoresizingMaskIntoConstraints="NO" id="yez-5U-inx">
+                                <rect key="frame" x="78" y="205" width="258" height="250"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ตั้งค่าความปลอดภัย" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cP-Pc-is8">
+                                <rect key="frame" x="20" y="64" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="24"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwj-tS-v48">
+                                <rect key="frame" x="20" y="69.5" width="8.5" height="22"/>
+                                <state key="normal" image="back_arrow_blue"/>
+                                <connections>
+                                    <action selector="touchBackButton:" destination="toz-Jz-AVg" eventType="touchUpInside" id="0Kw-sL-cX9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHj-EX-jey">
+                                <rect key="frame" x="20" y="475" width="374" height="54.5"/>
+                                <string key="text">เปิดใช้งานการสแกนลายนิ้วมือหรือ 
+การสแกนใบหน้า ในการเข้าใช้งานครั้งถัดไป</string>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="20"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHu-s5-4cX">
+                                <rect key="frame" x="20" y="539.5" width="374" height="44"/>
+                                <string key="text"> แทนรหัสผ่านความปลอดภัย
+ในการเข้าสู่แอปพลิเคชั่นหรือไม่?</string>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="16"/>
+                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlX-g2-X9B">
+                                <rect key="frame" x="20" y="722" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uOd-hl-ozY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-Regular" family="Noto Sans Thai UI" pointSize="16"/>
+                                <state key="normal" title="เปิดใช้งาน">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchNextButton:" destination="toz-Jz-AVg" eventType="touchUpInside" id="h3o-oj-iBy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEt-ds-fLz">
+                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hS1-sW-hmE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-Regular" family="Noto Sans Thai UI" pointSize="16"/>
+                                <state key="normal" title="ข้าม">
+                                    <color key="titleColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchSkipButton:" destination="toz-Jz-AVg" eventType="touchUpInside" id="CjA-l2-nLU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MYl-d5-h4d"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yez-5U-inx" firstAttribute="top" secondItem="5cP-Pc-is8" secondAttribute="bottom" constant="108" id="3vd-Xh-L49"/>
+                            <constraint firstAttribute="trailing" secondItem="IlX-g2-X9B" secondAttribute="trailing" constant="20" id="7d7-bo-sDr"/>
+                            <constraint firstItem="5cP-Pc-is8" firstAttribute="leading" secondItem="S6a-eX-NaK" secondAttribute="leading" constant="20" id="Dvs-zd-8cr"/>
+                            <constraint firstItem="hHu-s5-4cX" firstAttribute="leading" secondItem="S6a-eX-NaK" secondAttribute="leading" constant="20" id="E3D-Vr-Kw6"/>
+                            <constraint firstItem="fwj-tS-v48" firstAttribute="centerY" secondItem="5cP-Pc-is8" secondAttribute="centerY" id="Ezo-nA-76c"/>
+                            <constraint firstItem="fwj-tS-v48" firstAttribute="leading" secondItem="MYl-d5-h4d" secondAttribute="leading" constant="20" id="HVO-gR-PZh"/>
+                            <constraint firstItem="tHj-EX-jey" firstAttribute="top" secondItem="yez-5U-inx" secondAttribute="bottom" constant="20" id="KVP-US-HZn"/>
+                            <constraint firstItem="tHj-EX-jey" firstAttribute="leading" secondItem="S6a-eX-NaK" secondAttribute="leading" constant="20" id="NFl-uj-7ZU"/>
+                            <constraint firstItem="5PG-tf-jZx" firstAttribute="top" secondItem="YEt-ds-fLz" secondAttribute="bottom" constant="20" id="QrB-bD-ldC"/>
+                            <constraint firstItem="YEt-ds-fLz" firstAttribute="top" secondItem="IlX-g2-X9B" secondAttribute="bottom" constant="20" id="TtY-ra-aMr"/>
+                            <constraint firstAttribute="trailing" secondItem="tHj-EX-jey" secondAttribute="trailing" constant="20" id="WsH-L2-18O"/>
+                            <constraint firstItem="5cP-Pc-is8" firstAttribute="top" secondItem="fYR-wI-Dj0" secondAttribute="bottom" constant="20" id="Yy6-qN-sEm"/>
+                            <constraint firstAttribute="trailing" secondItem="hHu-s5-4cX" secondAttribute="trailing" constant="20" id="dZI-TR-eBy"/>
+                            <constraint firstItem="hHu-s5-4cX" firstAttribute="top" secondItem="tHj-EX-jey" secondAttribute="bottom" constant="10" id="epk-k7-SNB"/>
+                            <constraint firstItem="IlX-g2-X9B" firstAttribute="leading" secondItem="S6a-eX-NaK" secondAttribute="leading" constant="20" id="etH-Fs-Dea"/>
+                            <constraint firstAttribute="trailing" secondItem="5cP-Pc-is8" secondAttribute="trailing" constant="20" id="lbE-yM-3Lp"/>
+                            <constraint firstItem="yez-5U-inx" firstAttribute="centerX" secondItem="S6a-eX-NaK" secondAttribute="centerX" id="mWR-mU-xe4"/>
+                            <constraint firstItem="YEt-ds-fLz" firstAttribute="leading" secondItem="S6a-eX-NaK" secondAttribute="leading" constant="20" id="rTW-Cd-Ojd"/>
+                            <constraint firstAttribute="trailing" secondItem="YEt-ds-fLz" secondAttribute="trailing" constant="20" id="ryX-Ah-Sid"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rZx-IC-JBi"/>
+                    <connections>
+                        <segue destination="aD3-ur-V1K" kind="show" identifier="goToFinishSetPasscode" id="yYY-Tp-Gr1"/>
+                        <segue destination="A1z-Es-mYw" kind="show" identifier="gotoFirstSettingPasscodeScreen" id="juD-g0-UdY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tq8-UW-Fqe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8051" y="-236"/>
+        </scene>
+        <!--Finish Set Passcode View Controller-->
+        <scene sceneID="2Wy-zp-NR0">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="aD3-ur-V1K" customClass="FinishSetPasscodeViewController" customModule="ETDASSI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cU2-CT-UlY"/>
+                        <viewControllerLayoutGuide type="bottom" id="sfn-ag-LQE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zrt-tc-0Ne">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-jH-3sM">
+                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Qmb-pp-NAr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-Regular" family="Noto Sans Thai UI" pointSize="16"/>
+                                <state key="normal" title="เริ่มต้นใช้งาน ETDA e-Wallet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchDoneButton:" destination="aD3-ur-V1K" eventType="touchUpInside" id="pv5-nF-g8F"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ตั้งค่าความปลอดภัย" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9P-Xr-trg">
+                                <rect key="frame" x="20" y="64" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="24"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finished_register" translatesAutoresizingMaskIntoConstraints="NO" id="0T4-fi-NkT">
+                                <rect key="frame" x="78" y="205" width="258" height="250"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="การตั้งค่าความปลอดภัยเสร็จสมบูรณ์" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n06-Gr-kdY">
+                                <rect key="frame" x="20" y="475" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="20"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="การเข้าใช้งานแอปพลิเคชั่นได้ถูกปกป้อง" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2u-3U-J0U">
+                                <rect key="frame" x="20" y="512.5" width="374" height="22"/>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="16"/>
+                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Jc-Cg-WiE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0T4-fi-NkT" firstAttribute="top" secondItem="I9P-Xr-trg" secondAttribute="bottom" constant="108" id="1bb-V8-cMM"/>
+                            <constraint firstAttribute="trailing" secondItem="n06-Gr-kdY" secondAttribute="trailing" constant="20" id="Dph-RN-Is5"/>
+                            <constraint firstItem="u2u-3U-J0U" firstAttribute="top" secondItem="n06-Gr-kdY" secondAttribute="bottom" constant="10" id="EpB-r9-ObV"/>
+                            <constraint firstItem="sfn-ag-LQE" firstAttribute="top" secondItem="Wlh-jH-3sM" secondAttribute="bottom" constant="20" id="Ixv-f3-u4b"/>
+                            <constraint firstItem="0T4-fi-NkT" firstAttribute="centerX" secondItem="zrt-tc-0Ne" secondAttribute="centerX" id="OeZ-7e-hZx"/>
+                            <constraint firstAttribute="trailing" secondItem="Wlh-jH-3sM" secondAttribute="trailing" constant="20" id="Sbe-tm-Qfa"/>
+                            <constraint firstItem="Wlh-jH-3sM" firstAttribute="leading" secondItem="zrt-tc-0Ne" secondAttribute="leading" constant="20" id="TrX-i6-l5e"/>
+                            <constraint firstItem="I9P-Xr-trg" firstAttribute="leading" secondItem="zrt-tc-0Ne" secondAttribute="leading" constant="20" id="acD-Dk-qbi"/>
+                            <constraint firstItem="I9P-Xr-trg" firstAttribute="top" secondItem="cU2-CT-UlY" secondAttribute="bottom" constant="20" id="g1s-sd-T3z"/>
+                            <constraint firstItem="n06-Gr-kdY" firstAttribute="leading" secondItem="zrt-tc-0Ne" secondAttribute="leading" constant="20" id="jVy-Ee-C2e"/>
+                            <constraint firstAttribute="trailing" secondItem="I9P-Xr-trg" secondAttribute="trailing" constant="20" id="lNm-oG-yAg"/>
+                            <constraint firstItem="n06-Gr-kdY" firstAttribute="top" secondItem="0T4-fi-NkT" secondAttribute="bottom" constant="20" id="maP-Pg-xbM"/>
+                            <constraint firstAttribute="trailing" secondItem="u2u-3U-J0U" secondAttribute="trailing" constant="20" id="sxU-5a-vKv"/>
+                            <constraint firstItem="u2u-3U-J0U" firstAttribute="leading" secondItem="zrt-tc-0Ne" secondAttribute="leading" constant="20" id="wnb-af-hOt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MbK-4v-SFB"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="I9P-Xr-trg" id="u7L-YV-bai"/>
+                        <segue destination="efH-Ob-5DP" kind="show" identifier="goToPinLoginStoryboard" id="J3z-sM-Cob"/>
+                        <segue destination="HjU-9f-ame" kind="show" identifier="goToUserStoryboard" id="dgg-M1-aL2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QLd-qN-WEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9162" y="75"/>
+        </scene>
+        <!--PinLogin-->
+        <scene sceneID="c1L-Zm-akC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PinLogin" id="efH-Ob-5DP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7gH-ad-k3G"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MM1-h8-crv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10051" y="72"/>
+        </scene>
+        <!--Pin Code Register View Controller-->
+        <scene sceneID="SDZ-09-0Cq">
+            <objects>
+                <viewController storyboardIdentifier="PinCodeRegisterViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="A1z-Es-mYw" customClass="PinCodeRegisterViewController" customModule="ETDASSI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WiD-JJ-5oC"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Nb-WA-jt0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yAB-iF-xJ6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ตั้งค่าความปลอดภัย" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bed-qC-lbz">
+                                <rect key="frame" x="20" y="64" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="24"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="set_passcode" translatesAutoresizingMaskIntoConstraints="NO" id="ZfG-GX-8n3">
+                                <rect key="frame" x="78" y="205" width="258" height="250"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgZ-Qn-WlN">
+                                <rect key="frame" x="20" y="475" width="374" height="54.5"/>
+                                <string key="text">สร้างรหัสผ่าน 6 หลัก
+สำหรับการเข้าใช้งานครั้งถัดไป</string>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="20"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXO-qk-rm3">
+                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wkZ-98-IQl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-Regular" family="Noto Sans Thai UI" pointSize="16"/>
+                                <state key="normal" title="เริ่มต้นสร้างรหัสผ่าน">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="sbK-1O-Mgr" kind="show" identifier="" id="mnM-ep-Ycf"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qd-hX-AwK">
+                                <rect key="frame" x="20" y="69.5" width="8.5" height="22"/>
+                                <state key="normal" image="back_arrow_blue"/>
+                                <connections>
+                                    <action selector="touchBackButton:" destination="A1z-Es-mYw" eventType="touchUpInside" id="gaH-op-u8h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TX5-Dv-7h1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bed-qC-lbz" firstAttribute="leading" secondItem="yAB-iF-xJ6" secondAttribute="leading" constant="20" id="4wa-7z-HY3"/>
+                            <constraint firstItem="4Nb-WA-jt0" firstAttribute="top" secondItem="OXO-qk-rm3" secondAttribute="bottom" constant="20" id="BLe-2R-O4k"/>
+                            <constraint firstAttribute="trailing" secondItem="bed-qC-lbz" secondAttribute="trailing" constant="20" id="C6N-Ak-vPW"/>
+                            <constraint firstItem="OXO-qk-rm3" firstAttribute="leading" secondItem="yAB-iF-xJ6" secondAttribute="leading" constant="20" id="LYg-gh-i9a"/>
+                            <constraint firstItem="IgZ-Qn-WlN" firstAttribute="top" secondItem="ZfG-GX-8n3" secondAttribute="bottom" constant="20" id="PXb-wR-3PY"/>
+                            <constraint firstItem="7qd-hX-AwK" firstAttribute="centerY" secondItem="bed-qC-lbz" secondAttribute="centerY" id="ShL-X7-3SB"/>
+                            <constraint firstItem="ZfG-GX-8n3" firstAttribute="centerX" secondItem="yAB-iF-xJ6" secondAttribute="centerX" id="VEJ-1S-U5g"/>
+                            <constraint firstItem="ZfG-GX-8n3" firstAttribute="top" secondItem="bed-qC-lbz" secondAttribute="bottom" constant="108" id="WjZ-5t-rrb"/>
+                            <constraint firstItem="bed-qC-lbz" firstAttribute="top" secondItem="WiD-JJ-5oC" secondAttribute="bottom" constant="20" id="YXa-Pa-w6Q"/>
+                            <constraint firstItem="7qd-hX-AwK" firstAttribute="leading" secondItem="TX5-Dv-7h1" secondAttribute="leading" constant="20" id="jQF-2E-FTj"/>
+                            <constraint firstAttribute="trailing" secondItem="IgZ-Qn-WlN" secondAttribute="trailing" constant="20" id="mOA-Uk-AMI"/>
+                            <constraint firstItem="IgZ-Qn-WlN" firstAttribute="leading" secondItem="yAB-iF-xJ6" secondAttribute="leading" constant="20" id="rd5-Hl-dqi"/>
+                            <constraint firstAttribute="trailing" secondItem="OXO-qk-rm3" secondAttribute="trailing" constant="20" id="v4R-Po-UNb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gSm-og-FsI"/>
+                    <connections>
+                        <outlet property="backButton" destination="7qd-hX-AwK" id="O0b-om-vz4"/>
+                        <outlet property="passCodeBtn" destination="OXO-qk-rm3" id="b7x-5O-Y4K"/>
+                        <outlet property="titleLabel" destination="bed-qC-lbz" id="r1W-bS-WXl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="weO-x7-clJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5303" y="-18"/>
+        </scene>
+        <!--Bio Confirm View Controller-->
+        <scene sceneID="gZ6-Vv-j5T">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="XjR-m6-s2C" customClass="BioConfirmViewController" customModule="ETDASSI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hSM-VR-ncZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="iOl-Fk-ERh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CmT-oJ-rp2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="set_passcode" translatesAutoresizingMaskIntoConstraints="NO" id="Gjd-Ux-ALM">
+                                <rect key="frame" x="78" y="205" width="258" height="250"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ตั้งค่าความปลอดภัย" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGk-B3-eoF">
+                                <rect key="frame" x="20" y="64" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="24"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpL-Nj-hpo">
+                                <rect key="frame" x="20" y="475" width="374" height="54.5"/>
+                                <string key="text">กรุณายืนยันตัวตนด้วยการใส่รหัสอุปกรณ์ 
+สแกนใบหน้า หรือ สแกนลายนิ้วมือ</string>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="20"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพื่อใช้สำหรับยืนยันการตั้งรหัสผ่านใหม่" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjr-3u-wxM">
+                                <rect key="frame" x="20" y="539.5" width="374" height="22"/>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-SemiBold" family="Noto Sans Thai UI" pointSize="16"/>
+                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVG-jS-AbE">
+                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.12941176470588234" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2XT-Cx-yU0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansThaiUI-Regular" family="Noto Sans Thai UI" pointSize="16"/>
+                                <state key="normal" title="ยืนยัน">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchNextButton:" destination="XjR-m6-s2C" eventType="touchUpInside" id="9sS-Os-fbk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WX1-YO-PJC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nGk-B3-eoF" firstAttribute="leading" secondItem="CmT-oJ-rp2" secondAttribute="leading" constant="20" id="8Fd-UE-KYO"/>
+                            <constraint firstItem="wjr-3u-wxM" firstAttribute="top" secondItem="LpL-Nj-hpo" secondAttribute="bottom" constant="10" id="BFO-hm-dqB"/>
+                            <constraint firstItem="Gjd-Ux-ALM" firstAttribute="centerX" secondItem="CmT-oJ-rp2" secondAttribute="centerX" id="DJZ-SO-4iX"/>
+                            <constraint firstItem="LpL-Nj-hpo" firstAttribute="leading" secondItem="CmT-oJ-rp2" secondAttribute="leading" constant="20" id="Hm6-De-8f9"/>
+                            <constraint firstAttribute="trailing" secondItem="nGk-B3-eoF" secondAttribute="trailing" constant="20" id="QTN-o7-VgR"/>
+                            <constraint firstItem="wjr-3u-wxM" firstAttribute="leading" secondItem="CmT-oJ-rp2" secondAttribute="leading" constant="20" id="Yg8-uB-omc"/>
+                            <constraint firstAttribute="trailing" secondItem="wjr-3u-wxM" secondAttribute="trailing" constant="20" id="bO3-oy-c5X"/>
+                            <constraint firstItem="nGk-B3-eoF" firstAttribute="top" secondItem="hSM-VR-ncZ" secondAttribute="bottom" constant="20" id="cdJ-Hb-473"/>
+                            <constraint firstAttribute="trailing" secondItem="XVG-jS-AbE" secondAttribute="trailing" constant="20" id="d40-X5-syp"/>
+                            <constraint firstItem="LpL-Nj-hpo" firstAttribute="top" secondItem="Gjd-Ux-ALM" secondAttribute="bottom" constant="20" id="ncW-Ok-ORM"/>
+                            <constraint firstItem="WX1-YO-PJC" firstAttribute="bottom" secondItem="XVG-jS-AbE" secondAttribute="bottom" constant="20" id="oSP-S3-ogE"/>
+                            <constraint firstItem="Gjd-Ux-ALM" firstAttribute="top" secondItem="nGk-B3-eoF" secondAttribute="bottom" constant="108" id="tWE-dy-1ig"/>
+                            <constraint firstAttribute="trailing" secondItem="LpL-Nj-hpo" secondAttribute="trailing" constant="20" id="wHi-vE-DB0"/>
+                            <constraint firstItem="XVG-jS-AbE" firstAttribute="leading" secondItem="CmT-oJ-rp2" secondAttribute="leading" constant="20" id="xqC-fK-mFs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e9n-T0-6CV"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="nGk-B3-eoF" id="tI9-dO-jpN"/>
+                        <segue destination="aD3-ur-V1K" kind="show" identifier="goToFinishSetPasscode" id="Jbn-XR-3sg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JI0-i1-qry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8051" y="494"/>
+        </scene>
+        <!--User-->
+        <scene sceneID="R9P-93-79X">
+            <objects>
+                <viewControllerPlaceholder storyboardName="User" id="HjU-9f-ame" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nc8-PA-Mrm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlo-QP-DLv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10050" y="148"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="juD-g0-UdY"/>
+        <segue reference="Jbn-XR-3sg"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="back_arrow_blue" width="8.5" height="13"/>
+        <image name="biometric_replace passcode" width="258" height="250"/>
+        <image name="finished_register" width="258" height="250"/>
+        <image name="set_passcode" width="258" height="250"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

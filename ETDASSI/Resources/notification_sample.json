@@ -1,0 +1,10 @@
+{
+    "data": {
+        "title": "New VC Signing request",
+        "body": "มีคำขอออกเอกสารมาถึงคุณ",
+        "message": "eyJpc3MiOiJkaWQ6aWRpbjplMDU0ODI4ZGRjYWVlMjAxZTU1MWY2NWIzM2EyOTMyYmQ0Y2JiZDBmMjk0OTFkZmNmNzZkMzVkM2MyMTc0ZjJiIiwibm9uY2UiOiJmMmNhODA1NDBjNjhhY2NlYWE0MjM3NTI0YmVmZTIyOSIsInN1YiI6ImRpZDppZGluOjMxMjMxMDMzZDBkMjQ0MmU5OTRlNzY4MzVhMzY0ODgyNDE3MTBmMjUwM2YwYjgzOGNlODA0MDA1OGExNGZlN2YiLCJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvMjAxOC9jcmVkZW50aWFscy92MSJdLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiVGVzdCJdLCJjcmVkZW50aWFsU3ViamVjdCI6eyJtZXNzYWdlIjoidGVzdCJ9LCJjcmVkZW50aWFsU2NoZW1hIjp7ImlkIjoiaHR0cHM6Ly9zc2ktdGVzdC50ZWRhLnRoL2FwaS9zY2hlbWFzLzgyMzU2ZmRhLWUwNzktNDg4NC1hZjQ1LTAwNTE0YWRiMmVlYi8xLjAuMC9UZXN0U2NoZW1hLmpzb24iLCJ0eXBlIjoiSnNvblNjaGVtYVZhbGlkYXRvcjIwMTgifX19",
+        "creator": "Finema",
+        "approve_endpoint": "https://ssi-test.teda.th/api/web/vcs/0b3d3fe4-1398-45c0-abb5-143db0888c54/approve",
+        "reject_endpoint": "https://ssi-test.teda.th/api/web/vcs/0b3d3fe4-1398-45c0-abb5-143db0888c54/reject"
+    }
+}

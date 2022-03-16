@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansThaiUI-Regular.ttf">
+            <string>NotoSansThaiUI-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nmr-bY-xjI" customClass="MyDocumentTableViewCell" customModule="ETDASSI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nmr-bY-xjI" id="Tct-HG-AH5">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jr-3d-4BL">
+                        <rect key="frame" x="20" y="0.0" width="187" height="44"/>
+                        <fontDescription key="fontDescription" name="NotoSansThaiUI-Regular" family="Noto Sans Thai UI" pointSize="16"/>
+                        <color key="textColor" red="0.039215686270000001" green="0.12941176469999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNF-wx-lro">
+                        <rect key="frame" x="207" y="0.0" width="187" height="44"/>
+                        <fontDescription key="fontDescription" name="NotoSansThaiUI-Regular" family="Noto Sans Thai UI" pointSize="16"/>
+                        <color key="textColor" red="0.039215686270000001" green="0.12941176469999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7jr-3d-4BL" firstAttribute="width" secondItem="dNF-wx-lro" secondAttribute="width" id="1Yp-EM-R7Q"/>
+                    <constraint firstItem="7jr-3d-4BL" firstAttribute="leading" secondItem="Tct-HG-AH5" secondAttribute="leading" constant="20" id="7VO-7u-g0A"/>
+                    <constraint firstAttribute="bottom" secondItem="dNF-wx-lro" secondAttribute="bottom" id="9do-OM-osE"/>
+                    <constraint firstItem="dNF-wx-lro" firstAttribute="leading" secondItem="7jr-3d-4BL" secondAttribute="trailing" id="GeP-kR-6MN"/>
+                    <constraint firstAttribute="trailing" secondItem="dNF-wx-lro" secondAttribute="trailing" constant="20" id="HzR-Fx-myx"/>
+                    <constraint firstAttribute="bottom" secondItem="7jr-3d-4BL" secondAttribute="bottom" id="oLm-AI-Out"/>
+                    <constraint firstItem="7jr-3d-4BL" firstAttribute="top" secondItem="Tct-HG-AH5" secondAttribute="top" id="wnx-IY-k0O"/>
+                    <constraint firstItem="dNF-wx-lro" firstAttribute="top" secondItem="Tct-HG-AH5" secondAttribute="top" id="wqF-5r-EM5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLabel" destination="dNF-wx-lro" id="7XM-W9-X1M"/>
+                <outlet property="titleLabel" destination="7jr-3d-4BL" id="P0b-NK-Vfq"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="-21.428571428571427"/>
+        </tableViewCell>
+    </objects>
+</document>

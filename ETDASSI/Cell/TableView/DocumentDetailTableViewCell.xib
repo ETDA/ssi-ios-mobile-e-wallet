@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansThaiUI-Regular.ttf">
+            <string>NotoSansThaiUI-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="150" id="HXh-6l-dBF" customClass="DocumentDetailTableViewCell" customModule="ETDASSI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXh-6l-dBF" id="nhA-Jw-Rem">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ชื่อ:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qx1-bh-NbS">
+                        <rect key="frame" x="20" y="10" width="187" height="92"/>
+                        <fontDescription key="fontDescription" name="NotoSansThaiUI-Regular" family="Noto Sans Thai UI" pointSize="16"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@Context" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLI-6U-YjL">
+                        <rect key="frame" x="207" y="5" width="187" height="109"/>
+                        <fontDescription key="fontDescription" name="NotoSansThaiUI-Regular" family="Noto Sans Thai UI" pointSize="16"/>
+                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="HLI-6U-YjL" secondAttribute="bottom" constant="5" id="FvW-Xp-La0"/>
+                    <constraint firstAttribute="trailing" secondItem="HLI-6U-YjL" secondAttribute="trailing" constant="20" id="HJr-kZ-REI"/>
+                    <constraint firstItem="HLI-6U-YjL" firstAttribute="top" secondItem="nhA-Jw-Rem" secondAttribute="top" constant="10" id="IIU-fn-wCe"/>
+                    <constraint firstItem="HLI-6U-YjL" firstAttribute="centerY" secondItem="Qx1-bh-NbS" secondAttribute="centerY" id="M2b-4I-WN5"/>
+                    <constraint firstAttribute="bottom" secondItem="HLI-6U-YjL" secondAttribute="bottom" id="Vl9-6g-DXY"/>
+                    <constraint firstItem="HLI-6U-YjL" firstAttribute="top" secondItem="nhA-Jw-Rem" secondAttribute="top" constant="5" id="Vw5-NY-q8j"/>
+                    <constraint firstAttribute="bottom" secondItem="Qx1-bh-NbS" secondAttribute="bottom" constant="5" id="biD-hg-xzR"/>
+                    <constraint firstItem="HLI-6U-YjL" firstAttribute="height" secondItem="nhA-Jw-Rem" secondAttribute="height" multiplier="0.19469" constant="100" id="bnB-qh-1Xc"/>
+                    <constraint firstItem="Qx1-bh-NbS" firstAttribute="top" secondItem="nhA-Jw-Rem" secondAttribute="top" constant="5" id="e1d-qZ-adh"/>
+                    <constraint firstItem="HLI-6U-YjL" firstAttribute="height" secondItem="nhA-Jw-Rem" secondAttribute="height" multiplier="0.814159" id="fsw-Xr-Ic1"/>
+                    <constraint firstItem="HLI-6U-YjL" firstAttribute="height" secondItem="nhA-Jw-Rem" secondAttribute="height" multiplier="0.814159" id="gPe-E2-WzW"/>
+                    <constraint firstAttribute="height" secondItem="HLI-6U-YjL" secondAttribute="height" multiplier="1.22826" placeholder="YES" id="iJ5-A4-w5I"/>
+                    <constraint firstItem="HLI-6U-YjL" firstAttribute="width" secondItem="Qx1-bh-NbS" secondAttribute="width" id="lEy-QB-7wk"/>
+                    <constraint firstItem="HLI-6U-YjL" firstAttribute="leading" secondItem="Qx1-bh-NbS" secondAttribute="trailing" id="tFf-Sh-Ub3"/>
+                    <constraint firstItem="Qx1-bh-NbS" firstAttribute="centerY" secondItem="nhA-Jw-Rem" secondAttribute="centerY" id="y2y-E2-hwe"/>
+                    <constraint firstItem="Qx1-bh-NbS" firstAttribute="leading" secondItem="nhA-Jw-Rem" secondAttribute="leading" constant="20" id="zT8-6b-nAK"/>
+                    <constraint firstItem="HLI-6U-YjL" firstAttribute="centerY" secondItem="nhA-Jw-Rem" secondAttribute="centerY" id="zVO-CU-RAy"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="FvW-Xp-La0"/>
+                        <exclude reference="IIU-fn-wCe"/>
+                        <exclude reference="M2b-4I-WN5"/>
+                        <exclude reference="bnB-qh-1Xc"/>
+                        <exclude reference="fsw-Xr-Ic1"/>
+                        <exclude reference="gPe-E2-WzW"/>
+                        <exclude reference="iJ5-A4-w5I"/>
+                        <exclude reference="zVO-CU-RAy"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="HLI-6U-YjL" secondAttribute="bottom" constant="5" id="5TB-sX-wEU"/>
+                <constraint firstAttribute="bottom" secondItem="HLI-6U-YjL" secondAttribute="bottom" constant="11" id="D6s-CX-8pO"/>
+                <constraint firstItem="HLI-6U-YjL" firstAttribute="height" secondItem="HXh-6l-dBF" secondAttribute="height" multiplier="0.19469" id="Mdv-O3-T9i"/>
+                <constraint firstItem="HLI-6U-YjL" firstAttribute="top" secondItem="HXh-6l-dBF" secondAttribute="top" constant="10" id="U1D-Lh-wDV"/>
+                <constraint firstItem="HLI-6U-YjL" firstAttribute="height" secondItem="HXh-6l-dBF" secondAttribute="height" multiplier="0.814159" id="lq3-t5-I6l"/>
+                <constraint firstItem="HLI-6U-YjL" firstAttribute="top" secondItem="HXh-6l-dBF" secondAttribute="top" constant="5" id="nDu-Jc-dNj"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="5TB-sX-wEU"/>
+                    <exclude reference="D6s-CX-8pO"/>
+                    <exclude reference="Mdv-O3-T9i"/>
+                    <exclude reference="U1D-Lh-wDV"/>
+                    <exclude reference="lq3-t5-I6l"/>
+                    <exclude reference="nDu-Jc-dNj"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="contentViewCell" destination="nhA-Jw-Rem" id="l2S-Jf-xll"/>
+                <outlet property="descriptionLabel" destination="HLI-6U-YjL" id="mjJ-G5-eJt"/>
+                <outlet property="titleLabel" destination="Qx1-bh-NbS" id="Lxo-j6-2C3"/>
+            </connections>
+            <point key="canvasLocation" x="-392.75362318840581" y="90.736607142857139"/>
+        </tableViewCell>
+    </objects>
+</document>
